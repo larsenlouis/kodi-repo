@@ -1,5 +1,8 @@
 # Kodi addons
 
+repo: [https://larsenlouis.github.io/kodi-repo/_repo/](https://larsenlouis.github.io/kodi-repo/_repo/)
+
+
 ## build
 
 ```
