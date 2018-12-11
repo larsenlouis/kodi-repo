@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.jiaxinglive"
+version="0.0.1"
+name="嘉兴直播">
+<requires>
+  <import addon="xbmc.python" version="2.25.0"/>
+  <import addon="script.module.requests" version="2.19.1"/>
+  <!-- <import addon="inputstream.adaptive" version="2.3.12"/> -->
+  <!-- <import addon="script.module.m3u8" version="0.2.10"/> -->
+</requires>
+<extension point="xbmc.python.pluginsource" library="addon.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Livestream from Jiaxing local media</summary>
+  <summary lang="zh">收看嘉兴本地电视广播直播</summary>
+  <description lang="en_US">captured on http://www.jiaxingren.com/folder23/</description>
+  <description lang="zh_CN">收看嘉兴本地电视广播直播 http://www.jiaxingren.com/folder23/</description>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+  </assets>
+  <news>收看嘉兴本地电视广播直播
+
+    来自嘉兴人网站:http://www.jiaxingren.com/folder23/</news>
+</extension>
+</addon>
