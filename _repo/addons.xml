@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-    <addon id="repository.ll" name="ll repo" version="0.0.1" provider-name="ll">
-        <requires>
-            <import addon="xbmc.addon" version="12.0.0"/>
-        </requires>
-        <extension point="xbmc.addon.repository" name="ll repo">
-            <info compressed="false">https://larsenlouis.github.io/kodi-repo/_repo/_repo/addons.xml</info>
-            <checksum>https://larsenlouis.github.io/kodi-repo/_repo/_repo/addons.xml.md5</checksum>
-            <datadir zip="true">https://larsenlouis.github.io/kodi-repo/_repo/_repo/</datadir>
-            <hashes>false</hashes>
-        </extension>
-        <extension point="xbmc.addon.metadata">
-            <summary></summary>
-            <description></description>
-            <platform>all</platform>
-    </extension>
-</addon>
-
 <addon id="plugin.video.jiaxinglive"
-version="0.0.1"
+version="0.0.2"
 name="嘉兴直播">
 <requires>
   <import addon="xbmc.python" version="2.25.0"/>
@@ -42,5 +25,22 @@ name="嘉兴直播">
 
     来自嘉兴人网站:http://www.jiaxingren.com/folder23/</news>
 </extension>
+</addon>
+
+    <addon id="repository.ll" name="ll repo" version="0.0.2" provider-name="ll">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="ll repo">
+            <info compressed="false">https://larsenlouis.github.io/kodi-repo/_repo/_repo/addons.xml</info>
+            <checksum>https://larsenlouis.github.io/kodi-repo/_repo/_repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://larsenlouis.github.io/kodi-repo/_repo/_repo/</datadir>
+            <hashes>false</hashes>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary></summary>
+            <description></description>
+            <platform>all</platform>
+    </extension>
 </addon>
 </addons>

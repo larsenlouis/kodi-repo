@@ -14,7 +14,9 @@ repo: [https://larsenlouis.github.io/kodi-repo/_repo/](https://larsenlouis.githu
 cd _tool
 python2 generate_repo.py
 # generate html
-cd ../_repo
+cp index.sh ../_repo/
+cp autoindex.html ../_repo/
+cd ../_repo/
 bash index.sh
 ```
 

@@ -70,6 +70,35 @@ class JiaxingLive(object):
     def get_tv_channel_name(self, channel_pinyin):
         return self.channels['tv'][channel_pinyin]['meta']['name']
 
+class XiaoXinShuoShiVOD(object):
+    playlist_section_pattern = re.compile('<ul.*</ul>', re.S)
+    item_in_playlist_page_pattern = re.compile('<a href="(.*?)".*?<img src="(.*?)" width="\d+" height="\d+" />.*?<p>(.*?)</p>.*?</a>', re.S)
+    video_url_pattern = re.compile('http.*?\.m3u8')
+
+    @classmethod
+    def get_playlist(cls, page=0):
+        # the pagination acts like a mysql query
+        # that selects with an offset of [variable] and limit 16
+        offset = page * 16
+        # xxss
+        page_url = 'http://www.jiaxingren.com/folder24/folder147/folder149/folder355/?pp={offset}'.format(offset=offset)
+        r = requests.get(page_url)
+        r.encoding = 'utf8'
+
+        playlist_html = cls.playlist_section_pattern.findall(r.text)[0]
+        ret = []
+        for play_page_url, thumbnail_url, title in cls.item_in_playlist_page_pattern.findall(playlist_html):
+            ret.append(
+                (play_page_url, title, thumbnail_url)
+            )
+        return ret
+
+    @classmethod
+    def parse_vodstream(cls, play_page_url):
+        r = requests.get(play_page_url)
+        r.encoding = 'utf8'
+        return cls.video_url_pattern.findall(r.text)[0]
+
 
 if __name__ == '__main__':
     # print(JiaxingLive.parse_livestream('xwzh', 'tv'))
